@@ -5,6 +5,7 @@
 - `frontend-skill`
 - Agent Skills for Context Engineering（17 个技能）
 - Superpowers
+- Product Design
 - CodeGraph CLI 与 Codex MCP 集成
 
 ## 前置条件
@@ -156,6 +157,100 @@ superpowers
 Superpowers 的更新方式由 Codex 插件市场管理。出现新版本时，在 **Plugins** 页面中执行更新；如果当前会话仍使用旧版本，请重启 Codex。
 
 > 官方仓库可能还包含其他编码工具的安装方法。本文仅记录 Codex App 和 Codex CLI 的推荐安装流程。
+
+## 安装和使用 Product Design
+
+来源：[OpenAI Product Design plugin](https://github.com/openai/role-specific-plugins/tree/main/plugins/product-design)
+
+Product Design 是 OpenAI 提供的角色型 Codex 插件，用于把产品想法、网页 URL、截图和现有设计转换成可评审、可迭代的交互原型。它可以探索多个视觉方向、复刻网页、实现静态设计、审查产品流程、研究用户痛点并分享原型。
+
+### Codex App
+
+1. 打开 Codex App 左侧边栏的 **Plugins**。
+2. 搜索 **Product Design**，或在 **Creativity** 分类中找到它。
+3. 点击插件旁边的 `+`，按照界面提示完成安装。
+4. 安装完成后，启动一个新的 Codex 任务。
+
+### Codex CLI
+
+在 Codex CLI 中打开插件界面：
+
+```text
+/plugins
+```
+
+搜索：
+
+```text
+Product Design
+```
+
+选择 **Install Plugin**，安装后重新启动 Codex 会话。
+
+### 初次设置
+
+安装后可以先让插件记录经常使用的产品和设计上下文：
+
+```text
+@Product Design Help me get started
+```
+
+可保存的上下文包括产品 URL、Figma 文件、截图、参考图片、代码仓库路径、Storybook、设计令牌、设计系统和品牌素材。插件只会在相关任务中加载需要的内容。
+
+### 常用工作流
+
+探索产品方向：
+
+```text
+@Product Design Turn this product idea into three visual directions
+```
+
+制作可点击原型：
+
+```text
+@Product Design Build a clickable prototype for this product idea
+```
+
+复刻现有网页：
+
+```text
+@Product Design Clone this URL into an editable prototype: https://example.com
+```
+
+把截图或设计稿变成交互原型：
+
+```text
+@Product Design Turn this selected mockup into a responsive prototype
+```
+
+审查产品流程：
+
+```text
+@Product Design Audit this onboarding flow and identify the highest-impact UX and accessibility issues
+```
+
+研究用户痛点：
+
+```text
+@Product Design Research the biggest UX problems users are reporting for this product
+```
+
+### 可选集成
+
+Product Design 可以结合其他能力完成更完整的流程：
+
+- Browser、Chrome 或 Playwright：捕获并检查现有网页，完成复刻、审查和原型 QA。
+- Figma 或 Canva：使用已有设计上下文，并把结果带入设计工作区。
+- Image generation：探索视觉方向并生成原型素材。
+- Sites、Vercel 或其他托管工具：发布可运行的原型。
+
+没有这些集成时，仍然可以从文字需求、截图、图片、URL 或本地原型开始。发布前应明确选择托管目标。
+
+### 与 frontend-skill 的分工
+
+- Product Design 负责产品探索、视觉方向、UX 审查和可交互原型。
+- `frontend-production-shadcn` 负责在现有 React、TypeScript、Tailwind CSS 和 shadcn/ui 项目中实现生产级界面。
+- 推荐流程：先用 Product Design 比较和确认方向，再用 frontend-skill 按仓库规范实现正式代码。
 
 ## 安装 CodeGraph
 
