@@ -4,6 +4,7 @@
 
 - `frontend-skill`
 - Agent Skills for Context Engineering（17 个技能）
+- Superpowers
 - CodeGraph CLI 与 Codex MCP 集成
 
 ## 前置条件
@@ -108,6 +109,53 @@ $contextSkills | ForEach-Object {
   }
 }
 ```
+
+## 安装 Superpowers
+
+来源：[obra/superpowers](https://github.com/obra/superpowers)
+
+Superpowers 是一套完整的软件开发工作流插件，包含需求梳理、实现计划、测试驱动开发、系统化调试、代码审查、Git worktree 和任务收尾等技能。Codex 官方插件市场已经提供该插件，因此推荐通过市场安装，不需要手动克隆仓库或复制其中的技能目录。
+
+### Codex App
+
+1. 打开 Codex App 左侧边栏的 **Plugins**。
+2. 在 **Coding** 分类中找到 **Superpowers**。
+3. 点击 Superpowers 旁边的 `+`，按照界面提示完成安装。
+4. 安装完成后，重新启动当前 Codex 会话。
+
+### Codex CLI
+
+在 Codex CLI 中打开插件搜索界面：
+
+```text
+/plugins
+```
+
+搜索：
+
+```text
+superpowers
+```
+
+选择 **Install Plugin** 完成安装，然后启动一个新的 Codex 会话。
+
+### 验证
+
+新建一个 Codex 任务并提出需要开发功能的请求。安装正常时，Superpowers 会自动选择相关工作流技能，例如：
+
+- `brainstorming`
+- `writing-plans`
+- `test-driven-development`
+- `systematic-debugging`
+- `verification-before-completion`
+
+通常不需要手动指定技能名称；插件会根据任务自动触发相应流程。
+
+### 更新
+
+Superpowers 的更新方式由 Codex 插件市场管理。出现新版本时，在 **Plugins** 页面中执行更新；如果当前会话仍使用旧版本，请重启 Codex。
+
+> 官方仓库可能还包含其他编码工具的安装方法。本文仅记录 Codex App 和 Codex CLI 的推荐安装流程。
 
 ## 安装 CodeGraph
 
