@@ -1,0 +1,6 @@
+interface:
+  display_name: "TSD encrypted Office docs"
+  short_description: "Read DLP-encrypted Office files via Word COM, write plain DOCX with python-docx"
+  default_prompt: "Check which Office files here start with %TSD- and extract their plaintext with this skill"
+policy:
+  allow_implicit_invocation: true

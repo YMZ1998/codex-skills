@@ -31,3 +31,4 @@ $installer = "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\ins
 - [CodeGraph](docs/codegraph.md)：代码图谱 CLI、Codex MCP 集成与项目索引。
 - [git-commit](docs/git-commit.md)：按暂存状态选择范围并生成中文本地提交。
 - [维护与安全](docs/maintenance.md)：技能更新、重复安装处理和安全建议。
+- [TSD 加密 Office 文档](docs/tsd-encrypted-office-docs.md)：企业透明加密容器的读取、明文生成与验证技能（本地备份）。
